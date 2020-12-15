@@ -1,0 +1,22 @@
+server:
+  port: 8181
+  servlet:
+    context-path: /home
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.sicnu.wagesystems.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///wagesystem?serverTimezone=UTC
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+aliyun:
+  name: xxxx
+  password: xxxx
