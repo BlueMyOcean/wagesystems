@@ -10,5 +10,12 @@
     <select id="findByUsername" resultType="OrdinaryUser" parameterType="String">
         select * from ordinary_user where username = #{username}
     </select>
+    
+    <insert id="addUser" parameterType="OrdinaryUser">
+        insert into ordinary_user(name, username,password,cardId,gender,birthday,id_card_num,total) values(
+        #{name},#{username},#{password},#{cardId},#{gender},
+        #{birthday},#{idCardNum},0)
+
+    </insert>
 
 </mapper>

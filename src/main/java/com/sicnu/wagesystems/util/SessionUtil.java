@@ -17,7 +17,7 @@ public class SessionUtil {
         return session.isNew();
     }
 
-    public void setUserSession(OrdinaryUser user,String type, HttpServletRequest request)
+    public void setUserSession(OrdinaryUser user, String type, HttpServletRequest request)
     {
         session = request.getSession();
         session.setAttribute(type,user);

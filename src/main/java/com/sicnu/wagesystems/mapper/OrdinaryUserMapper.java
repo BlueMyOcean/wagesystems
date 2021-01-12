@@ -12,4 +12,5 @@ public interface OrdinaryUserMapper {
 
     List<OrdinaryUser> findAll();
     OrdinaryUser findByUsername(String username);
+    void addUser(OrdinaryUser ordinaryUser);
 }

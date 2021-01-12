@@ -31,8 +31,17 @@ public class OrdinaryUserServiceImp implements OrdinaryUserServiceDao {
     }
 
     @Override
-    public boolean ordinaryUserRegister(OrdinaryUser user) {
-        return false;
+    public boolean ordinaryUserRegister(OrdinaryUser user,HttpServletRequest request) {
+        try {
+            ordinaryUserMapper.addUser(user);
+            OrdinaryUser ordinaryUsers = ordinaryUserMapper.findByUsername(user.getUsername());
+            session.setUserSession(ordinaryUsers,"OrdinaryUser",request);
+            return true;
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
 
     }
 
